@@ -1,5 +1,4 @@
 
-
 $( document ).ready(function() {
     bootStrapCountryDropdown.init();
     virtualKeyboard.init();

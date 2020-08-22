@@ -182,15 +182,10 @@ const virtualKeyboard = {
     },
 
     close () {
-        // this.properties.value = '';
         this.elements.main.classList.remove("keyboard-on");
         this.elements.main.classList.add("keyboard-off");
     },
     
-    // onInput () {
-    //    let input = document.getElementById("target-keyboard")
-    //     input.value += this.properties.value
-    // },
     createIcon  (name) {
         let icon = document.createElement('i')
         icon.textContent = name

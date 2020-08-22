@@ -10,7 +10,7 @@ $( document ).ready(function() {
     const country = localStorage.getItem('country')
  
     $.ajax({
-        url: `https://api.weatherbit.io/v2.0/forecast/daily?city=${city+","+country}&days=5&key=2c77a48e545e4dc38dda77b50d583752`,
+        url: `https://api.weatherbit.io/v2.0/forecast/daily?city=${city+","+country}&days=5&key=${WEATHER_API_KEY}`,
         type: 'GET'})
       .done( (response) => {
          if(!response){
@@ -26,7 +26,7 @@ $( document ).ready(function() {
                         $(`<h5>${day.weather.description}</h5>`).appendTo(weatherDiv)
                         $(weatherDiv).appendTo("#forecast")
                         $.ajax({
-                            url: `https://api.unsplash.com/search/photos?page=1&query=${city+","+country}&client_id=tpB9pEdcjD1RQP2B0UPmJDKTY5iU0_qN4ycx1oruQw8`,
+                            url: `https://api.unsplash.com/search/photos?page=1&query=${city+","+country}&client_id=${UNSPLASH_API_KEY}`,
                             type: 'GET'})
                         .done( (response) => {
                             if(!response){
